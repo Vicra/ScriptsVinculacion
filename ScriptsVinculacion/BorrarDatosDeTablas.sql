@@ -1,0 +1,14 @@
+DELETE FROM `vinculacion`.`hours` WHERE Id <> -1;
+DELETE FROM `vinculacion`.`sectionprojects` WHERE Id <> -1;
+DELETE FROM `vinculacion`.`userroles` WHERE Id <> -1;
+DELETE FROM `vinculacion`.`sectionusers` WHERE Id <> -1;
+DELETE FROM `vinculacion`.`sections` WHERE Id <> -1;
+DELETE FROM `vinculacion`.`projectmajors` WHERE Id <> -1;
+DELETE FROM `vinculacion`.`majorusers` WHERE Id <> -1;
+DELETE FROM `vinculacion`.`users` WHERE Id <> -1;
+DELETE FROM `vinculacion`.`majors` WHERE Id <> -1;
+DELETE FROM `vinculacion`.`roles` WHERE Id <> -1;
+DELETE FROM `vinculacion`.`projects` WHERE Id <> -1;
+DELETE FROM `vinculacion`.`periods` WHERE Id <> -1;
+DELETE FROM `vinculacion`.`faculties` WHERE Id <> -1;
+DELETE FROM `vinculacion`.`classes` WHERE Id <> -1;

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ContextType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmi:id="_5Fk7wFk5EeaUF7yCZzmS0A" confirmationNeeded="false" name="Default">
+  <contextParameter xmi:id="_5Fk7wVk5EeaUF7yCZzmS0A" comment="" name="VinculacionAccess1_Password" prompt="VinculacionAccess1_Password?" promptNeeded="false" type="id_Password" value=""/>
+  <contextParameter xmi:id="_5Fk7wlk5EeaUF7yCZzmS0A" comment="" name="VinculacionAccess1_File" prompt="VinculacionAccess1_File?" promptNeeded="false" type="id_File" value="C:/Users/Victor/Desktop/Vinculacion.accdb"/>
+  <contextParameter xmi:id="_5Fk7w1k5EeaUF7yCZzmS0A" comment="" name="VinculacionAccess1_AdditionalParams" prompt="VinculacionAccess1_AdditionalParams?" promptNeeded="false" type="id_String" value="memory=false"/>
+  <contextParameter xmi:id="_5Fk7xFk5EeaUF7yCZzmS0A" comment="" name="VinculacionAccess1_Login" prompt="VinculacionAccess1_Login?" promptNeeded="false" type="id_String" value=""/>
+</talendfile:ContextType>
