@@ -1,0 +1,21 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<expression:EMFExpression xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:expression="http:///expression.ecore" id="tMap_1=>" expression="(row3.P_NOMBRE+&quot; &quot;+&#xD;&#xA;(row3.S_NOMBRE!=null?row3.S_NOMBRE+&quot; &quot;:&quot;&quot;)+&#xD;&#xA;(row3.P__APELLIDO!=null?row3.P__APELLIDO+&quot; &quot;:&quot;&quot;)+&#xD;&#xA;(row3.S_APELLIDO!=null?row3.S_APELLIDO:&quot;&quot;)).toUpperCase()">
+  <variables name="row1.NO_CUENTA" value="null" talendType="id_String"/>
+  <variables name="row1.P_NOMBRE" value="null" talendType="id_String"/>
+  <variables name="row1.S_NOMBRE" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row1.P__APELLIDO" value="null" talendType="id_String"/>
+  <variables name="row1.S_APELLIDO" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row1.ID_CARRERA" value="null" talendType="id_String"/>
+  <variables name="row1.ID_CAMPUS" value="null" talendType="id_String"/>
+  <variables name="row1.FINIQUITO_F" value="null" talendType="id_Boolean" nullable="true"/>
+  <variables name="row3.NO_CUENTA" value="null" talendType="id_String"/>
+  <variables name="row3.P_NOMBRE" value="null" talendType="id_String"/>
+  <variables name="row3.S_NOMBRE" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row3.P__APELLIDO" value="null" talendType="id_String"/>
+  <variables name="row3.S_APELLIDO" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row3.ID_CARRERA" value="null" talendType="id_String"/>
+  <variables name="row3.ID_CAMPUS" value="null" talendType="id_String"/>
+  <variables name="row3.FINIQUITO_F" value="null" talendType="id_Boolean" nullable="true"/>
+  <variables name="row3.MajorId" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row3.Id" value="0" talendType="id_Long"/>
+</expression:EMFExpression>
