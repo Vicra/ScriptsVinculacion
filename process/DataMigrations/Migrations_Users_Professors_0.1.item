@@ -190,7 +190,7 @@
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="out">
         <mapperTableEntries name="AccountId" expression="row1.ID_DOCENTE " type="id_String" nullable="true"/>
-        <mapperTableEntries name="Name" expression="(row1.NOMB_DOCENTE + &quot; &quot; + &#xD;&#xA;row1.APE_DOCENTE!=null?row3.APE_DOCENTE:&quot;&quot;).toUpperCase() " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Name" expression="(row1.NOMB_DOCENTE + &quot; &quot; + row1.APE_DOCENTE).toUpperCase() " type="id_String" nullable="true"/>
         <mapperTableEntries name="Password" type="id_String" nullable="true"/>
         <mapperTableEntries name="Campus" expression="&quot;USPS&quot;" type="id_String" nullable="true"/>
         <mapperTableEntries name="Email" type="id_String" nullable="true"/>

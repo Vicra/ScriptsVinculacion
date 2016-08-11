@@ -1,6 +1,0 @@
-<?xml version="1.1" encoding="UTF-8"?>
-<expression:EMFExpression xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:expression="http:///expression.ecore" id="tMap_1=>" expression="row1.NOMB_FACULTAD.toUpperCase()">
-  <variables name="row1.ID_FACULTAD" value="null" talendType="id_String"/>
-  <variables name="row1.NOMB_FACULTAD" value="null" talendType="id_String" nullable="true"/>
-  <variables name="row1.ID_CAMPUS" value="null" talendType="id_String" nullable="true"/>
-</expression:EMFExpression>
