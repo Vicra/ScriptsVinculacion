@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.relational="http:///orgomg/cwm/resource/relational.ecore" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010">
-  <TalendMetadata:DatabaseConnection xmi:id="_tyF_4Fk6EeaUF7yCZzmS0A" name="VinculacionLocal" id="_nhRiEFk6EeaUF7yCZzmS0A" label="VinculacionLocal" dataPackage="_heE2kGGrEeadfOLU0XtuHQ _t0B5kFk6EeaUF7yCZzmS0A" DatabaseType="MySQL" DriverClass="org.gjt.mm.mysql.Driver" URL="jdbc:mysql://fiasps.unitec.edu:3306/vinculacionmigracion?noDatetimeStringSync=true" dbVersionString="MYSQL_5" Port="3306" Username="vinculacion" Password="zETWV+eGmTfI11O+V9LShw==" ServerName="fiasps.unitec.edu" DatasourceName="" FileFieldName="" SID="vinculacionmigracion" SqlSynthax="Sintaxis SQL" DbmsId="mysql_id" ProductId="MYSQL" AdditionalParams="noDatetimeStringSync=true" StandardSQL="true" SQLMode="false" UiSchema="">
+  <TalendMetadata:DatabaseConnection xmi:id="_tyF_4Fk6EeaUF7yCZzmS0A" name="VinculacionLocal" id="_nhRiEFk6EeaUF7yCZzmS0A" label="VinculacionLocal" dataPackage="_t0B5kFk6EeaUF7yCZzmS0A" DatabaseType="MySQL" DriverClass="org.gjt.mm.mysql.Driver" URL="jdbc:mysql://fiasps.unitec.edu:3306/vinculacion?noDatetimeStringSync=true" dbVersionString="MYSQL_5" Port="3306" Username="vinculacion" Password="zETWV+eGmTfI11O+V9LShw==" ServerName="fiasps.unitec.edu" DatasourceName="" FileFieldName="" SID="vinculacion" SqlSynthax="Sintaxis SQL" DbmsId="mysql_id" ProductId="MYSQL" AdditionalParams="noDatetimeStringSync=true" StandardSQL="true" SQLMode="false" UiSchema="">
     <taggedValue xmi:id="_tyF_4Vk6EeaUF7yCZzmS0A" tag="Is Conn Need Reload" value="true"/>
     <taggedValue xmi:id="_tzJIwFk6EeaUF7yCZzmS0A" tag="package filter" value=""/>
     <taggedValue xmi:id="_tzJIwVk6EeaUF7yCZzmS0A" tag="Status" value=""/>
@@ -14,7 +14,6 @@
     <taggedValue xmi:id="_tzcDslk6EeaUF7yCZzmS0A" tag="DB IdentifierQuoteString" value="`"/>
     <parameters xmi:id="_tyF_4lk6EeaUF7yCZzmS0A" key="CONN_PARA_KEY_USERNAME" value="vinculacion"/>
   </TalendMetadata:DatabaseConnection>
-  <orgomg.cwm.resource.relational:Catalog xmi:id="_heE2kGGrEeadfOLU0XtuHQ" name="vinculacionmigracion" dataManager="_tyF_4Fk6EeaUF7yCZzmS0A"/>
   <orgomg.cwm.resource.relational:Catalog xmi:id="_t0B5kFk6EeaUF7yCZzmS0A" name="vinculacion" dataManager="_tyF_4Fk6EeaUF7yCZzmS0A">
     <ownedElement xsi:type="relational:TdTable" xmi:id="_y5eJYVk6EeaUF7yCZzmS0A" name="classes" id="_y5eJYFk6EeaUF7yCZzmS0A" label="classes" tableType="TABLE">
       <taggedValue xmi:id="_y5eJYlk6EeaUF7yCZzmS0A" tag="Comment" value=""/>

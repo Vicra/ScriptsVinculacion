@@ -146,7 +146,7 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaFlex_1" show="false"/>
     <elementParameter field="CHECK" name="DATA_AUTO_PROPAGATE" value="true"/>
     <elementParameter field="MEMO_JAVA" name="CODE_START" value="// start part of your Java code&#xA;      "/>
-    <elementParameter field="MEMO_JAVA" name="CODE_MAIN" value="// here is the main part of the component,&#xA;// a piece of code executed in the row&#xA;// loop&#xA;row2.ID_PROYECTO = row1.ID_PROYECTO;&#xA;if(row1.PERIODO != null){&#xA;&#x9;String[] periodo = row1.PERIODO.split(&quot;-&quot;);&#xA;&#x9;if(periodo.length > 1){&#xA;&#x9;&#x9;if(periodo[0].toUpperCase().equals(&quot;I&quot;)){&#xA;&#x9;&#x9;&#x9;row2.NUMBER_PERIOD = 1;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;else if(periodo[0].toUpperCase().equals(&quot;II&quot;)){&#xA;&#x9;&#x9;&#x9;row2.NUMBER_PERIOD = 2;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;else if(periodo[0].toUpperCase().equals(&quot;III&quot;)){&#xA;&#x9;&#x9;&#x9;row2.NUMBER_PERIOD = 3;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;else if(periodo[0].toUpperCase().equals(&quot;IV&quot;)){&#xA;&#x9;&#x9;&#x9;row2.NUMBER_PERIOD = 4;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;else if(periodo[0].toUpperCase().equals(&quot;V&quot;)){&#xA;&#x9;&#x9;&#x9;row2.NUMBER_PERIOD = 5;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;row2.YEAR_PERIOD = Integer.parseInt(periodo[1].toString());&#xA;&#x9;}&#xA;}"/>
+    <elementParameter field="MEMO_JAVA" name="CODE_MAIN" value="// here is the main part of the component,&#xA;// a piece of code executed in the row&#xA;// loop&#xA;row2.ID_PROYECTO = row1.ID_PROYECTO.toUpperCase();&#xA;if(row1.PERIODO != null){&#xA;&#x9;String[] periodo = row1.PERIODO.split(&quot;-&quot;);&#xA;&#x9;if(periodo.length > 1){&#xA;&#x9;&#x9;if(periodo[0].toUpperCase().equals(&quot;I&quot;)){&#xA;&#x9;&#x9;&#x9;row2.NUMBER_PERIOD = 1;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;else if(periodo[0].toUpperCase().equals(&quot;II&quot;)){&#xA;&#x9;&#x9;&#x9;row2.NUMBER_PERIOD = 2;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;else if(periodo[0].toUpperCase().equals(&quot;III&quot;)){&#xA;&#x9;&#x9;&#x9;row2.NUMBER_PERIOD = 3;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;else if(periodo[0].toUpperCase().equals(&quot;IV&quot;)){&#xA;&#x9;&#x9;&#x9;row2.NUMBER_PERIOD = 4;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;else if(periodo[0].toUpperCase().equals(&quot;V&quot;)){&#xA;&#x9;&#x9;&#x9;row2.NUMBER_PERIOD = 5;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;row2.YEAR_PERIOD = Integer.parseInt(periodo[1].toString());&#xA;&#x9;}&#xA;}"/>
     <elementParameter field="MEMO_JAVA" name="CODE_END" value="// end of the component, outside/closing the loop&#xA;      "/>
     <elementParameter field="CHECK" name="Version_V2_0" value="false" show="false"/>
     <elementParameter field="CHECK" name="Version_V3_2" value="false" show="false"/>
@@ -203,7 +203,7 @@
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
     <elementParameter field="TEXT" name="HOST" value="&quot;fiasps.unitec.edu&quot;"/>
     <elementParameter field="TEXT" name="PORT" value="&quot;3306&quot;"/>
-    <elementParameter field="TEXT" name="DBNAME" value="&quot;vinculacionmigracion&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;vinculacion&quot;"/>
     <elementParameter field="TEXT" name="TYPE" value="MYSQL" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;vinculacion&quot;"/>
     <elementParameter field="PASSWORD" name="PASS" value="ycnEm/OGCm34SsvoKnDopg=="/>
@@ -307,7 +307,7 @@
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
     <elementParameter field="TEXT" name="HOST" value="&quot;fiasps.unitec.edu&quot;"/>
     <elementParameter field="TEXT" name="PORT" value="&quot;3306&quot;"/>
-    <elementParameter field="TEXT" name="DBNAME" value="&quot;vinculacionmigracion&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;vinculacion&quot;"/>
     <elementParameter field="TEXT" name="TYPE" value="MYSQL" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;vinculacion&quot;"/>
     <elementParameter field="PASSWORD" name="PASS" value="ycnEm/OGCm34SsvoKnDopg=="/>
@@ -422,7 +422,7 @@
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
     <elementParameter field="TEXT" name="HOST" value="&quot;fiasps.unitec.edu&quot;"/>
     <elementParameter field="TEXT" name="PORT" value="&quot;3306&quot;"/>
-    <elementParameter field="TEXT" name="DBNAME" value="&quot;vinculacionmigracion&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;vinculacion&quot;"/>
     <elementParameter field="TEXT" name="TYPE" value="MYSQL" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;vinculacion&quot;"/>
     <elementParameter field="PASSWORD" name="PASS" value="ycnEm/OGCm34SsvoKnDopg=="/>
@@ -525,7 +525,7 @@
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
     <elementParameter field="TEXT" name="HOST" value="&quot;fiasps.unitec.edu&quot;"/>
     <elementParameter field="TEXT" name="PORT" value="&quot;3306&quot;"/>
-    <elementParameter field="TEXT" name="DBNAME" value="&quot;vinculacionmigracion&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;vinculacion&quot;"/>
     <elementParameter field="TEXT" name="TYPE" value="MYSQL" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;vinculacion&quot;"/>
     <elementParameter field="PASSWORD" name="PASS" value="ycnEm/OGCm34SsvoKnDopg=="/>
@@ -595,6 +595,7 @@
       <column comment="" key="false" length="19" name="Section_Id" nullable="true" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="-1" name="IsApproved" nullable="true" pattern="" precision="-1" sourceType="" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
       <additionalProperties key="Comment" value=""/>
     </metadata>
     <nodeData xsi:type="MapperData">
@@ -603,6 +604,7 @@
       <outputTables sizeState="INTERMEDIATE" name="out">
         <mapperTableEntries name="Project_Id" expression="row10.ProjecId " type="id_Long" nullable="true"/>
         <mapperTableEntries name="Section_Id" expression="row10.SectionId " type="id_Long" nullable="true"/>
+        <mapperTableEntries name="IsApproved" expression="false" type="id_Boolean" nullable="true"/>
       </outputTables>
       <inputTables sizeState="INTERMEDIATE" name="row10" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="ID_PROYECTO" type="id_String"/>
@@ -626,7 +628,7 @@
     <elementParameter field="TEXT" name="TYPE" value="MYSQL" show="false"/>
     <elementParameter field="TEXT" name="HOST" value="&quot;fiasps.unitec.edu&quot;"/>
     <elementParameter field="TEXT" name="PORT" value="&quot;3306&quot;"/>
-    <elementParameter field="TEXT" name="DBNAME" value="&quot;vinculacionmigracion&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;vinculacion&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;vinculacion&quot;"/>
     <elementParameter field="PASSWORD" name="PASS" value="ycnEm/OGCm34SsvoKnDopg=="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;sectionprojects&quot;"/>
@@ -659,6 +661,11 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="IsApproved"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
     </elementParameter>
     <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
@@ -675,6 +682,7 @@
       <column comment="" key="false" length="19" name="Section_Id" nullable="true" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="-1" name="IsApproved" nullable="true" pattern="" precision="-1" sourceType="BIT" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
       <additionalProperties key="Comment" value=""/>
     </metadata>
     <metadata connector="REJECT" label="sectionprojects" name="REJECT">
@@ -684,6 +692,7 @@
       <column comment="" key="false" length="19" name="Section_Id" nullable="true" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="-1" name="IsApproved" nullable="true" pattern="" precision="-1" sourceType="BIT" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <additionalProperties key="Comment" value=""/>
@@ -698,7 +707,7 @@
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
     <elementParameter field="TEXT" name="HOST" value="&quot;fiasps.unitec.edu&quot;"/>
     <elementParameter field="TEXT" name="PORT" value="&quot;3306&quot;"/>
-    <elementParameter field="TEXT" name="DBNAME" value="&quot;vinculacionmigracion&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;vinculacion&quot;"/>
     <elementParameter field="TEXT" name="TYPE" value="MYSQL" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;vinculacion&quot;"/>
     <elementParameter field="PASSWORD" name="PASS" value="ycnEm/OGCm34SsvoKnDopg=="/>
@@ -801,6 +810,11 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row9" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="out" lineStyle="0" metaname="out" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tMysqlOutput_1">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="IsApproved"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="out" show="false"/>
   </connection>
