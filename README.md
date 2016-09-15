@@ -8,6 +8,7 @@ Antes de la Migración
 * Se necesita tener el esquema de la base de datos, si lo quieres correr local podes copiar el esquema en el query que esta en la carpeta ScriptsVinculacion -> CreacionEsquemaTablas.sql
 
 Pasos para correr una migración
+
 1. Seleccionar las conexiones a las bases de datos, Access y MySQL(o a la base de datos).
 
 2. Correr el job que borra toda la data de las tablas.
