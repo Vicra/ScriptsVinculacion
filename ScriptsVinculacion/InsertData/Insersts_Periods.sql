@@ -18,13 +18,12 @@ INSERT INTO `vinculacion`.`periods` (Number, Year, IsCurrent) VALUES (2, 2014, 0
 INSERT INTO `vinculacion`.`periods` (Number, Year, IsCurrent) VALUES (3, 2014, 0);
 INSERT INTO `vinculacion`.`periods` (Number, Year, IsCurrent) VALUES (4, 2014, 0);
 INSERT INTO `vinculacion`.`periods` (Number, Year, IsCurrent) VALUES (5, 2014, 0);
-INSERT INTO `vinculacion`.`periods` (Number, Year, IsCurrent) VALUES (1, 2015, 0);	
+INSERT INTO `vinculacion`.`periods` (Number, Year, IsCurrent) VALUES (1, 2015, 0);
 INSERT INTO `vinculacion`.`periods` (Number, Year, IsCurrent) VALUES (2, 2015, 0);
 INSERT INTO `vinculacion`.`periods` (Number, Year, IsCurrent) VALUES (3, 2015, 0);
 INSERT INTO `vinculacion`.`periods` (Number, Year, IsCurrent) VALUES (4, 2015, 0);
 INSERT INTO `vinculacion`.`periods` (Number, Year, IsCurrent) VALUES (5, 2015, 0);
 INSERT INTO `vinculacion`.`periods` (Number, Year, IsCurrent) VALUES (1, 2016, 0);
 INSERT INTO `vinculacion`.`periods` (Number, Year, IsCurrent) VALUES (2, 2016, 0);
-INSERT INTO `vinculacion`.`periods` (Number, Year, FromDate, ToDate, IsCurrent) VALUES (2, 2016,STR_TO_DATE('18-04-2016', '%d-%m-%Y'),STR_TO_DATE('28-06-2016', '%d-%m-%Y'), 0);
 INSERT INTO `vinculacion`.`periods` (Number, Year, IsCurrent) VALUES (3, 2016, 0);
 INSERT INTO `vinculacion`.`periods` (Number, Year, FromDate, ToDate, IsCurrent) VALUES (4, 2016,STR_TO_DATE('18-07-2016', '%d-%m-%Y'),STR_TO_DATE('27-09-2016', '%d-%m-%Y'),1);
