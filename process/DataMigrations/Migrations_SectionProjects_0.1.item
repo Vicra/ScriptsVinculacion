@@ -119,7 +119,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#xA;  [TABLA GENERAL].ID_PROYECTO, &#xA;  [TABLA GENERAL].PERIODO, &#xD;&#xA;  [TABLA GENERAL].ID_CLASE&#xA;FROM [TABLA GENERAL]&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#xA;  [TABLA GENERAL].ID_PROYECTO, &#xA;  [TABLA GENERAL].PERIODO, &#xA;  [TABLA GENERAL].ID_CLASE,&#xD;&#xA;  [TABLA GENERAL].HORAS_ACUM&#xA;FROM [TABLA GENERAL]&quot;"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" value="access_id" show="false"/>
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;memory=false&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="*Note: Example for Additional JDBC Parameters: &quot;parameterName1=value1&amp;&amp;parameterName2=value2&quot;"/>
@@ -133,6 +133,8 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="ID_CLASE"/>
       <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="HORAS_ACUM"/>
+      <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -140,13 +142,14 @@
       <column comment="" key="false" length="20" name="ID_PROYECTO" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="PERIODO" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="ID_CLASE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="HORAS_ACUM" nullable="true" pattern="" precision="-1" sourceType="INTEGER" type="id_Integer" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tJavaFlex" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="256" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJavaFlex_1" show="false"/>
     <elementParameter field="CHECK" name="DATA_AUTO_PROPAGATE" value="true"/>
     <elementParameter field="MEMO_JAVA" name="CODE_START" value="// start part of your Java code&#xA;      "/>
-    <elementParameter field="MEMO_JAVA" name="CODE_MAIN" value="// here is the main part of the component,&#xA;// a piece of code executed in the row&#xA;// loop&#xA;row2.ID_PROYECTO = row1.ID_PROYECTO.toUpperCase();&#xA;if(row1.PERIODO != null){&#xA;&#x9;String[] periodo = row1.PERIODO.split(&quot;-&quot;);&#xA;&#x9;if(periodo.length > 1){&#xA;&#x9;&#x9;if(periodo[0].toUpperCase().equals(&quot;I&quot;)){&#xA;&#x9;&#x9;&#x9;row2.NUMBER_PERIOD = 1;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;else if(periodo[0].toUpperCase().equals(&quot;II&quot;)){&#xA;&#x9;&#x9;&#x9;row2.NUMBER_PERIOD = 2;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;else if(periodo[0].toUpperCase().equals(&quot;III&quot;)){&#xA;&#x9;&#x9;&#x9;row2.NUMBER_PERIOD = 3;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;else if(periodo[0].toUpperCase().equals(&quot;IV&quot;)){&#xA;&#x9;&#x9;&#x9;row2.NUMBER_PERIOD = 4;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;else if(periodo[0].toUpperCase().equals(&quot;V&quot;)){&#xA;&#x9;&#x9;&#x9;row2.NUMBER_PERIOD = 5;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;row2.YEAR_PERIOD = Integer.parseInt(periodo[1].toString());&#xA;&#x9;}&#xA;}"/>
+    <elementParameter field="MEMO_JAVA" name="CODE_MAIN" value="// here is the main part of the component,&#xA;// a piece of code executed in the row&#xA;// loop&#xA;row2.ID_PROYECTO = row1.ID_PROYECTO.toUpperCase();&#xA;if(row1.PERIODO != null){&#xA;&#x9;String[] periodo = row1.PERIODO.split(&quot;-&quot;);&#xA;&#x9;if(periodo.length > 1){&#xA;&#x9;&#x9;if(periodo[0].toUpperCase().equals(&quot;I&quot;)){&#xA;&#x9;&#x9;&#x9;row2.NUMBER_PERIOD = 1;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;else if(periodo[0].toUpperCase().equals(&quot;II&quot;)){&#xA;&#x9;&#x9;&#x9;row2.NUMBER_PERIOD = 2;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;else if(periodo[0].toUpperCase().equals(&quot;III&quot;)){&#xA;&#x9;&#x9;&#x9;row2.NUMBER_PERIOD = 3;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;else if(periodo[0].toUpperCase().equals(&quot;IV&quot;)){&#xA;&#x9;&#x9;&#x9;row2.NUMBER_PERIOD = 4;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;else if(periodo[0].toUpperCase().equals(&quot;V&quot;)){&#xA;&#x9;&#x9;&#x9;row2.NUMBER_PERIOD = 5;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;row2.YEAR_PERIOD = Integer.parseInt(periodo[1].toString());&#xA;&#x9;}&#xA;}&#xA;row2.HORAS = row1.HORAS_ACUM;"/>
     <elementParameter field="MEMO_JAVA" name="CODE_END" value="// end of the component, outside/closing the loop&#xA;      "/>
     <elementParameter field="CHECK" name="Version_V2_0" value="false" show="false"/>
     <elementParameter field="CHECK" name="Version_V3_2" value="false" show="false"/>
@@ -158,6 +161,7 @@
       <column comment="" key="false" length="-1" name="NUMBER_PERIOD" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="YEAR_PERIOD" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="ID_CLASE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="HORAS" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tJoin" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="384" posY="160">
@@ -180,6 +184,7 @@
       <column comment="" key="false" length="-1" name="NUMBER_PERIOD" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="YEAR_PERIOD" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="ID_CLASE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="HORAS" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="true" length="19" name="PeriodId" nullable="false" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -189,6 +194,7 @@
       <column comment="" key="false" length="-1" name="NUMBER_PERIOD" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="YEAR_PERIOD" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="ID_CLASE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="HORAS" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="true" length="19" name="PeriodId" nullable="false" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -278,6 +284,7 @@
       <column comment="" key="false" length="-1" name="NUMBER_PERIOD" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="YEAR_PERIOD" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="ID_CLASE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="HORAS" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="true" length="19" name="PeriodId" nullable="false" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -290,6 +297,7 @@
       <column comment="" key="false" length="-1" name="NUMBER_PERIOD" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="YEAR_PERIOD" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="ID_CLASE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="HORAS" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="true" length="19" name="PeriodId" nullable="false" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -316,7 +324,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#xA;  `projects`.`Id`, &#xA;  `projects`.`ProjectId`, &#xA;  `projects`.`Name`, &#xA;  `projects`.`Description`, &#xA;  `projects`.`Cost`, &#xA;  `projects`.`IsDeleted`, &#xA;  `projects`.`BeneficiarieOrganization`&#xA;FROM `projects`&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#xA;  `projects`.`Id`, &#xA;  `projects`.`ProjectId`, &#xA;  `projects`.`Name`, &#xA;  `projects`.`Description`, &#xA;  `projects`.`IsDeleted`, &#xA;  `projects`.`BeneficiarieOrganization`&#xA;FROM `projects`&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
@@ -334,8 +342,6 @@
       <elementValue elementRef="SCHEMA_COLUMN" value="Name"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="Description"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Cost"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="IsDeleted"/>
       <elementValue elementRef="TRIM" value="false"/>
@@ -355,9 +361,6 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="2147483647" name="Description" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="22" name="Cost" nullable="false" pattern="" precision="0" sourceType="DOUBLE" type="id_Double" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="0" name="IsDeleted" nullable="false" pattern="" precision="0" sourceType="BIT" type="id_Boolean" usefulColumn="true">
@@ -387,6 +390,7 @@
       <column comment="" key="false" length="-1" name="NUMBER_PERIOD" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="YEAR_PERIOD" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="ID_CLASE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="HORAS" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="true" length="19" name="PeriodId" nullable="false" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -402,6 +406,7 @@
       <column comment="" key="false" length="-1" name="NUMBER_PERIOD" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="YEAR_PERIOD" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="ID_CLASE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="HORAS" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="true" length="19" name="PeriodId" nullable="false" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -484,6 +489,7 @@
       <column comment="" key="false" length="-1" name="NUMBER_PERIOD" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="YEAR_PERIOD" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="ID_CLASE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="HORAS" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="true" length="19" name="PeriodId" nullable="false" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -502,6 +508,7 @@
       <column comment="" key="false" length="-1" name="NUMBER_PERIOD" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="YEAR_PERIOD" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="ID_CLASE" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="HORAS" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="true" length="19" name="PeriodId" nullable="false" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -596,6 +603,8 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="-1" name="IsApproved" nullable="true" pattern="" precision="-1" sourceType="" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Description" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Cost" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <additionalProperties key="Comment" value=""/>
     </metadata>
     <nodeData xsi:type="MapperData">
@@ -604,13 +613,16 @@
       <outputTables sizeState="INTERMEDIATE" name="out">
         <mapperTableEntries name="Project_Id" expression="row10.ProjecId " type="id_Long" nullable="true"/>
         <mapperTableEntries name="Section_Id" expression="row10.SectionId " type="id_Long" nullable="true"/>
-        <mapperTableEntries name="IsApproved" expression="false" type="id_Boolean" nullable="true"/>
+        <mapperTableEntries name="IsApproved" expression="true" type="id_Boolean" nullable="true"/>
+        <mapperTableEntries name="Description" expression="&quot;&quot;" type="id_String" nullable="true"/>
+        <mapperTableEntries name="Cost" expression="0" type="id_Integer" nullable="true"/>
       </outputTables>
       <inputTables sizeState="INTERMEDIATE" name="row10" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="ID_PROYECTO" type="id_String"/>
         <mapperTableEntries name="NUMBER_PERIOD" type="id_Integer" nullable="true"/>
         <mapperTableEntries name="YEAR_PERIOD" type="id_Integer" nullable="true"/>
         <mapperTableEntries name="ID_CLASE" type="id_String" nullable="true"/>
+        <mapperTableEntries name="HORAS" type="id_Integer" nullable="true"/>
         <mapperTableEntries name="PeriodId" type="id_Long"/>
         <mapperTableEntries name="ProjecId" type="id_Long"/>
         <mapperTableEntries name="ClassId" type="id_Long"/>
@@ -666,6 +678,16 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Description"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Cost"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
     </elementParameter>
     <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
@@ -683,6 +705,8 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="-1" name="IsApproved" nullable="true" pattern="" precision="-1" sourceType="BIT" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Description" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Cost" nullable="true" pattern="" precision="-1" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <additionalProperties key="Comment" value=""/>
     </metadata>
     <metadata connector="REJECT" label="sectionprojects" name="REJECT">
@@ -693,75 +717,19 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="-1" name="IsApproved" nullable="true" pattern="" precision="-1" sourceType="BIT" type="id_Boolean" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Description" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Cost" nullable="true" pattern="" precision="-1" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <additionalProperties key="Comment" value=""/>
-    </metadata>
-  </node>
-  <node componentName="tMysqlRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1120" posY="160">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlRow_1" show="false"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_nhRiEFk6EeaUF7yCZzmS0A" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="MYSQL_5"/>
-    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
-    <elementParameter field="TEXT" name="HOST" value="&quot;localhost&quot;"/>
-    <elementParameter field="TEXT" name="PORT" value="&quot;3306&quot;"/>
-    <elementParameter field="TEXT" name="DBNAME" value="&quot;vinculacion&quot;"/>
-    <elementParameter field="TEXT" name="TYPE" value="MYSQL" show="false"/>
-    <elementParameter field="TEXT" name="USER" value="&quot;root&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="A8Alqbka73xSt5pw+TqrJg=="/>
-    <elementParameter field="TECHNICAL" name="SCHEMA_FLOW:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA_FLOW:REPOSITORY_SCHEMA_TYPE" value="_nhRiEFk6EeaUF7yCZzmS0A - sectionprojects" show="false"/>
-    <elementParameter field="DBTABLE" name="TABLE" value="&quot;sectionprojects&quot;"/>
-    <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
-    <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
-    <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;delete `vinculacion`.`sectionprojects` from `vinculacion`.`sectionprojects` inner join &#xD;&#xA;    (select  min(Id) minid, Section_Id, Project_Id &#xD;&#xA;     from `vinculacion`.`sectionprojects`&#xD;&#xA;     group by Section_Id, Project_Id  &#xD;&#xA;     having count(1) > 1) as duplicates&#xD;&#xA;   on (duplicates.Section_Id = `vinculacion`.`sectionprojects`.Section_Id&#xD;&#xA;   and duplicates.Project_Id = `vinculacion`.`sectionprojects`.Project_Id&#xD;&#xA;   and duplicates.minid &lt;> `vinculacion`.`sectionprojects`.Id);&quot;"/>
-    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
-    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
-    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
-    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
-    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;noDatetimeStringSync=true&quot;"/>
-    <elementParameter field="CHECK" name="PROPAGATE_RECORD_SET" value="false"/>
-    <elementParameter field="COLUMN_LIST" name="RECORD_SET_COLUMN" value="Id" show="false"/>
-    <elementParameter field="CHECK" name="USE_PREPAREDSTATEMENT" value="false"/>
-    <elementParameter field="TABLE" name="SET_PREPAREDSTATEMENT_PARAMETERS" show="false"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
-    <elementParameter field="TEXT" name="COMMIT_EVERY" value="10000"/>
-    <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="sectionprojects" name="tMysqlRow_1">
-      <column comment="" key="true" length="19" name="Id" nullable="false" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="19" name="Project_Id" nullable="true" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="19" name="Section_Id" nullable="true" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <additionalProperties key="Comment" value=""/>
-    </metadata>
-    <metadata connector="REJECT" label="sectionprojects" name="REJECT">
-      <column comment="" key="true" length="19" name="Id" nullable="false" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="19" name="Project_Id" nullable="true" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="19" name="Section_Id" nullable="true" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <additionalProperties key="Comment" value=""/>
     </metadata>
   </node>
   <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tAccessInput_1" offsetLabelX="0" offsetLabelY="0" source="tAccessInput_1" target="tJavaFlex_1">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
       <elementValue elementRef="TRACE_COLUMN" value="ID_CLASE"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="HORAS_ACUM"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
@@ -814,20 +782,18 @@
       <elementValue elementRef="TRACE_COLUMN" value="IsApproved"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="Description"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="Cost"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="out" show="false"/>
   </connection>
-  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tMysqlOutput_1" offsetLabelX="0" offsetLabelY="0" source="tMysqlOutput_1" target="tMysqlRow_1">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk1" show="false"/>
-  </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tAccessInput_1" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
-  </subjob>
-  <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlRow_1" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>

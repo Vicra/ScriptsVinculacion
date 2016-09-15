@@ -190,7 +190,7 @@
       <column comment="" key="false" length="16" name="HORAS_ACUMS" nullable="false" pattern="" precision="0" sourceType="SMALLINT" type="id_Integer" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="out1">
         <mapperTableEntries name="ID_PROYECTO" expression="row11.ID_PROYECTO!=null?row11.ID_PROYECTO.toUpperCase():&quot;&quot; " type="id_String"/>
@@ -243,7 +243,10 @@
   <node componentName="tJoin" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="896" posY="128">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJoin_6" show="false"/>
     <elementParameter field="CHECK" name="USE_LOOKUP_COLS" value="true"/>
-    <elementParameter field="TABLE" name="LOOKUP_COLS"/>
+    <elementParameter field="TABLE" name="LOOKUP_COLS">
+      <elementValue elementRef="OUTPUT_COLUMN" value="Id"/>
+      <elementValue elementRef="LOOKUP_COLUMN" value="Id"/>
+    </elementParameter>
     <elementParameter field="TABLE" name="JOIN_KEY">
       <elementValue elementRef="INPUT_COLUMN" value="HORAS_ACUMS"/>
       <elementValue elementRef="LOOKUP_COLUMN" value="Amount"/>
@@ -268,6 +271,9 @@
       <column comment="" key="false" length="-1" name="ID_DOCENTE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="NO_CUENTA" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="BENEFICIARIO" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="true" length="19" name="Id" nullable="false" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
       <column comment="" key="false" length="-1" name="HORAS_ACUMS" nullable="true" pattern="" precision="-1" sourceType="" type="id_Integer" originalLength="-1" usefulColumn="true"/>
@@ -279,6 +285,9 @@
       <column comment="" key="false" length="-1" name="ID_DOCENTE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="NO_CUENTA" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="BENEFICIARIO" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="true" length="19" name="Id" nullable="false" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
     </metadata>
   </node>
   <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="160" posY="224">
@@ -409,7 +418,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#xA;  `users`.`Id`, &#xA;  `users`.`AccountId`, &#xA;  `users`.`Name`, &#xA;  `users`.`Password`, &#xA;  `users`.`Campus`, &#xA;  `users`.`Email`, &#xA;  `users`.`CreationDate`, &#xA;  `users`.`ModificationDate`, &#xA;  `users`.`Status`, &#xA;  `users`.`Major_Id`&#xA;FROM `users`&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#xA;  `users`.`Id`, &#xA;  `users`.`AccountId`, &#xA;  `users`.`Name`, &#xA;  `users`.`Password`, &#xA;  `users`.`Campus`, &#xA;  `users`.`Email`, &#xA;  `users`.`CreationDate`, &#xA;  `users`.`ModificationDate`, &#xA;  `users`.`Status`, &#xA;  `users`.`Major_Id`,&#xD;&#xA;  `users`.`Finiquiteado`&#xA;FROM `users`&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
@@ -439,6 +448,8 @@
       <elementValue elementRef="SCHEMA_COLUMN" value="Status"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="Major_Id"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Finiquiteado"/>
       <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
@@ -472,6 +483,9 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="19" name="Major_Id" nullable="true" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="0" name="Finiquiteado" nullable="false" pattern="" precision="0" sourceType="BIT" type="id_Boolean" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <additionalProperties key="Comment" value=""/>
@@ -561,7 +575,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#xA;  `sectionprojects`.`Id`, &#xA;  `sectionprojects`.`Project_Id`, &#xA;  `sectionprojects`.`Section_Id`&#xA;FROM `sectionprojects`&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#xA;  `sectionprojects`.`Id`, &#xA;  `sectionprojects`.`Project_Id`, &#xA;  `sectionprojects`.`Section_Id`,&#xD;&#xA; `sectionprojects`.`Cost`,&#xD;&#xA; `sectionprojects`.`Description`,&#xD;&#xA; `sectionprojects`.`IsApproved`&#xA;FROM `sectionprojects`&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
@@ -578,6 +592,12 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="Section_Id"/>
       <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="IsApproved"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Description"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Cost"/>
+      <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -589,6 +609,15 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="19" name="Section_Id" nullable="true" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="0" name="IsApproved" nullable="false" pattern="" precision="0" sourceType="BIT" type="id_Boolean" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="2147483647" name="Description" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="22" name="Cost" nullable="false" pattern="" precision="0" sourceType="DOUBLE" type="id_Double" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <additionalProperties key="Comment" value=""/>
@@ -1009,7 +1038,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#xA;  `projects`.`Id`, &#xA;  `projects`.`ProjectId`, &#xA;  `projects`.`Name`, &#xA;  `projects`.`Description`, &#xA;  `projects`.`Cost`, &#xA;  `projects`.`IsDeleted`, &#xA;  `projects`.`BeneficiarieOrganization`&#xA;FROM `projects`&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#xA;  `projects`.`Id`, &#xA;  `projects`.`ProjectId`, &#xA;  `projects`.`Name`, &#xA;  `projects`.`Description`, &#xA;  `projects`.`IsDeleted`, &#xA;  `projects`.`BeneficiarieOrganization`&#xA;FROM `projects`&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
@@ -1027,8 +1056,6 @@
       <elementValue elementRef="SCHEMA_COLUMN" value="Name"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="Description"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Cost"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="IsDeleted"/>
       <elementValue elementRef="TRIM" value="false"/>
@@ -1048,9 +1075,6 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="2147483647" name="Description" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="22" name="Cost" nullable="false" pattern="" precision="0" sourceType="DOUBLE" type="id_Double" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="0" name="IsDeleted" nullable="false" pattern="" precision="0" sourceType="BIT" type="id_Boolean" usefulColumn="true">
@@ -1094,6 +1118,8 @@
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="BENEFICIARIO"/>
       <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Id"/>
+      <elementValue elementRef="LENGTH" value="10"/>
     </elementParameter>
     <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="100" show="false"/>
@@ -1108,6 +1134,9 @@
       <column comment="" key="false" length="-1" name="ID_DOCENTE" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="NO_CUENTA" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="BENEFICIARIO" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="true" length="19" name="Id" nullable="false" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
     </metadata>
   </node>
   <connection connectorName="FLOW" label="row11" lineStyle="0" metaname="tAccessInput_1" offsetLabelX="0" offsetLabelY="0" source="tAccessInput_1" target="tMap_1">

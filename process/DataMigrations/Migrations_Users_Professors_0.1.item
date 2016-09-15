@@ -430,6 +430,9 @@
       <column comment="" key="false" length="19" name="Major_Id" nullable="true" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="0" name="Finiquiteado" nullable="false" pattern="" precision="0" sourceType="BIT" type="id_Boolean" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <additionalProperties key="Comment" value=""/>
     </metadata>
     <metadata connector="REJECT" label="users" name="REJECT">
@@ -461,6 +464,9 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="19" name="Major_Id" nullable="true" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="0" name="Finiquiteado" nullable="false" pattern="" precision="0" sourceType="BIT" type="id_Boolean" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>

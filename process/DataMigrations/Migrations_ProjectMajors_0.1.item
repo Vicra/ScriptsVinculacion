@@ -104,7 +104,7 @@
     <routinesParameter id="_My_JgFOzEeaILKOQPU2o6A" name="TalendDate"/>
     <routinesParameter id="_MzdqoFOzEeaILKOQPU2o6A" name="TalendString"/>
   </parameters>
-  <node componentName="tAccessInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="160" posY="160">
+  <node componentName="tAccessInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="160" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tAccessInput_2" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_YAyPsFk6EeaUF7yCZzmS0A" show="false"/>
@@ -121,7 +121,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#xA;  [TABLA GENERAL].CORRELATIVO, &#xA;  [TABLA GENERAL].ID_PROYECTO, &#xA;  [TABLA GENERAL].PERIODO, &#xA;  [TABLA GENERAL].ID_CLASE, &#xA;  [TABLA GENERAL].ID_FACULTAD, &#xA;  [TABLA GENERAL].ID_DOCENTE, &#xA;  [TABLA GENERAL].NO_CUENTA, &#xA;  [TABLA GENERAL].BENEFICIARIO, &#xA;  [TABLA GENERAL].HORAS_ACUM, &#xA;  [TABLA GENERAL].PRO_NOPRO, &#xA;  [TABLA GENERAL].ID_VINC&#xA;FROM [TABLA GENERAL]&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#xA;  [TABLA GENERAL].ID_PROYECTO, &#xA;  [TABLA GENERAL].NO_CUENTA&#xA;FROM [TABLA GENERAL]&quot;"/>
     <elementParameter field="MAPPING_TYPE" name="MAPPING" value="access_id" show="false"/>
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;memory=false&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="*Note: Example for Additional JDBC Parameters: &quot;parameterName1=value1&amp;&amp;parameterName2=value2&quot;"/>
@@ -129,46 +129,28 @@
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
     <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
     <elementParameter field="TABLE" name="TRIM_COLUMN">
-      <elementValue elementRef="SCHEMA_COLUMN" value="CORRELATIVO"/>
-      <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="ID_PROYECTO"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="PERIODO"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ID_CLASE"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ID_FACULTAD"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ID_DOCENTE"/>
-      <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="NO_CUENTA"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="BENEFICIARIO"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="HORAS_ACUM"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="PRO_NOPRO"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ID_VINC"/>
       <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="TABLA_GENERAL" name="tAccessInput_2">
-      <column comment="" key="true" length="32" name="CORRELATIVO" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Long" usefulColumn="true"/>
       <column comment="" key="false" length="20" name="ID_PROYECTO" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="PERIODO" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="6" name="ID_CLASE" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="25" name="ID_FACULTAD" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="ID_DOCENTE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="NO_CUENTA" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="25" name="BENEFICIARIO" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="16" name="HORAS_ACUM" nullable="false" pattern="" precision="0" sourceType="SMALLINT" type="id_Short" usefulColumn="true"/>
-      <column comment="" key="false" length="0" name="PRO_NOPRO" nullable="true" pattern="" precision="0" sourceType="BOOLEAN" type="id_Boolean" usefulColumn="true"/>
-      <column comment="" key="false" length="2" name="ID_VINC" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="true" length="32" name="CORRELATIVO" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Long" usefulColumn="false"/>
+      <column comment="" key="false" length="10" name="PERIODO" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="false"/>
+      <column comment="" key="false" length="6" name="ID_CLASE" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="false"/>
+      <column comment="" key="false" length="25" name="ID_FACULTAD" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="false"/>
+      <column comment="" key="false" length="5" name="ID_DOCENTE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="false"/>
+      <column comment="" key="false" length="25" name="BENEFICIARIO" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="false"/>
+      <column comment="" key="false" length="16" name="HORAS_ACUM" nullable="false" pattern="" precision="0" sourceType="SMALLINT" type="id_Short" usefulColumn="false"/>
+      <column comment="" key="false" length="0" name="PRO_NOPRO" nullable="true" pattern="" precision="0" sourceType="BOOLEAN" type="id_Boolean" usefulColumn="false"/>
+      <column comment="" key="false" length="2" name="ID_VINC" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="false"/>
     </metadata>
   </node>
-  <node componentName="tJoin" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="320" posY="160">
+  <node componentName="tJoin" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="320" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJoin_3" show="false"/>
     <elementParameter field="CHECK" name="USE_LOOKUP_COLS" value="true"/>
     <elementParameter field="TABLE" name="LOOKUP_COLS">
@@ -182,39 +164,21 @@
     <elementParameter field="CHECK" name="USE_INNER_JOIN" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="TABLA_GENERAL" name="tJoin_3">
-      <column comment="" key="true" length="32" name="CORRELATIVO" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Long" usefulColumn="true"/>
       <column comment="" key="false" length="20" name="ID_PROYECTO" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="PERIODO" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="6" name="ID_CLASE" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="25" name="ID_FACULTAD" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="ID_DOCENTE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="NO_CUENTA" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="25" name="BENEFICIARIO" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="16" name="HORAS_ACUM" nullable="false" pattern="" precision="0" sourceType="SMALLINT" type="id_Short" usefulColumn="true"/>
-      <column comment="" key="false" length="0" name="PRO_NOPRO" nullable="true" pattern="" precision="0" sourceType="BOOLEAN" type="id_Boolean" usefulColumn="true"/>
-      <column comment="" key="false" length="2" name="ID_VINC" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="19" name="Major_Id" nullable="true" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
     </metadata>
     <metadata connector="REJECT" label="TABLA_GENERAL" name="REJECT">
-      <column comment="" key="true" length="32" name="CORRELATIVO" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Long" usefulColumn="true"/>
       <column comment="" key="false" length="20" name="ID_PROYECTO" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="PERIODO" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="6" name="ID_CLASE" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="25" name="ID_FACULTAD" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="ID_DOCENTE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="NO_CUENTA" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="25" name="BENEFICIARIO" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="16" name="HORAS_ACUM" nullable="false" pattern="" precision="0" sourceType="SMALLINT" type="id_Short" usefulColumn="true"/>
-      <column comment="" key="false" length="0" name="PRO_NOPRO" nullable="true" pattern="" precision="0" sourceType="BOOLEAN" type="id_Boolean" usefulColumn="true"/>
-      <column comment="" key="false" length="2" name="ID_VINC" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="19" name="Major_Id" nullable="true" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
     </metadata>
   </node>
-  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="288" posY="288">
+  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="288" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlInput_1" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_nhRiEFk6EeaUF7yCZzmS0A" show="false"/>
@@ -234,7 +198,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#xA;  `users`.`Id`, &#xA;  `users`.`AccountId`, &#xA;  `users`.`Name`, &#xA;  `users`.`Password`, &#xA;  `users`.`Campus`, &#xA;  `users`.`Email`, &#xA;  `users`.`CreationDate`, &#xA;  `users`.`ModificationDate`, &#xA;  `users`.`Status`, &#xA;  `users`.`Major_Id`&#xA;FROM `users`&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#xA;  `users`.`Id`, &#xA;  `users`.`AccountId`, &#xA;  `users`.`Name`, &#xA;  `users`.`Password`, &#xA;  `users`.`Campus`, &#xA;  `users`.`Email`, &#xA;  `users`.`CreationDate`, &#xA;  `users`.`ModificationDate`, &#xA;  `users`.`Status`, &#xA;  `users`.`Major_Id`,&#xD;&#xA;  `users`.`Finiquiteado`&#xA;FROM `users`&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
@@ -264,6 +228,8 @@
       <elementValue elementRef="SCHEMA_COLUMN" value="Status"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="Major_Id"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="Finiquiteado"/>
       <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
@@ -299,10 +265,13 @@
       <column comment="" key="false" length="19" name="Major_Id" nullable="true" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="0" name="Finiquiteado" nullable="false" pattern="" precision="0" sourceType="BIT" type="id_Boolean" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <additionalProperties key="Comment" value=""/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="448" posY="192">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="448" posY="224">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMap_1" show="false"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
@@ -314,53 +283,26 @@
     <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="o" name="o">
-      <column comment="" key="true" length="32" name="CORRELATIVO" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Long" usefulColumn="true"/>
       <column comment="" key="false" length="20" name="ID_PROYECTO" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="PERIODO" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="6" name="ID_CLASE" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="25" name="ID_FACULTAD" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="ID_DOCENTE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="NO_CUENTA" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="25" name="BENEFICIARIO" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="16" name="HORAS_ACUM" nullable="false" pattern="" precision="0" sourceType="SMALLINT" type="id_Short" usefulColumn="true"/>
-      <column comment="" key="false" length="0" name="PRO_NOPRO" nullable="true" pattern="" precision="0" sourceType="BOOLEAN" type="id_Boolean" usefulColumn="true"/>
-      <column comment="" key="false" length="2" name="ID_VINC" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="19" name="Major_Id" nullable="true" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="MapperData">
       <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="o">
-        <mapperTableEntries name="CORRELATIVO" expression="row1.CORRELATIVO " type="id_Long" nullable="true"/>
         <mapperTableEntries name="ID_PROYECTO" expression="row1.ID_PROYECTO.toUpperCase() " type="id_String"/>
-        <mapperTableEntries name="PERIODO" expression="row1.PERIODO " type="id_String"/>
-        <mapperTableEntries name="ID_CLASE" expression="row1.ID_CLASE " type="id_String"/>
-        <mapperTableEntries name="ID_FACULTAD" expression="row1.ID_FACULTAD " type="id_String" nullable="true"/>
-        <mapperTableEntries name="ID_DOCENTE" expression="row1.ID_DOCENTE " type="id_String" nullable="true"/>
         <mapperTableEntries name="NO_CUENTA" expression="row1.NO_CUENTA " type="id_String"/>
-        <mapperTableEntries name="BENEFICIARIO" expression="row1.BENEFICIARIO " type="id_String"/>
-        <mapperTableEntries name="HORAS_ACUM" expression="row1.HORAS_ACUM " type="id_Short"/>
-        <mapperTableEntries name="PRO_NOPRO" expression="row1.PRO_NOPRO " type="id_Boolean" nullable="true"/>
-        <mapperTableEntries name="ID_VINC" expression="row1.ID_VINC " type="id_String"/>
         <mapperTableEntries name="Major_Id" expression="row1.Major_Id " type="id_Long" nullable="true"/>
       </outputTables>
       <inputTables sizeState="INTERMEDIATE" name="row1" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
-        <mapperTableEntries name="CORRELATIVO" type="id_Long" nullable="true"/>
         <mapperTableEntries name="ID_PROYECTO" type="id_String"/>
-        <mapperTableEntries name="PERIODO" type="id_String"/>
-        <mapperTableEntries name="ID_CLASE" type="id_String"/>
-        <mapperTableEntries name="ID_FACULTAD" type="id_String" nullable="true"/>
-        <mapperTableEntries name="ID_DOCENTE" type="id_String" nullable="true"/>
         <mapperTableEntries name="NO_CUENTA" type="id_String"/>
-        <mapperTableEntries name="BENEFICIARIO" type="id_String"/>
-        <mapperTableEntries name="HORAS_ACUM" type="id_Short"/>
-        <mapperTableEntries name="PRO_NOPRO" type="id_Boolean" nullable="true"/>
-        <mapperTableEntries name="ID_VINC" type="id_String"/>
         <mapperTableEntries name="Major_Id" type="id_Long" nullable="true"/>
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tJoin" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="544" posY="192">
+  <node componentName="tJoin" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="544" posY="224">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tJoin_1" show="false"/>
     <elementParameter field="CHECK" name="USE_LOOKUP_COLS" value="true"/>
     <elementParameter field="TABLE" name="LOOKUP_COLS">
@@ -374,41 +316,23 @@
     <elementParameter field="CHECK" name="USE_INNER_JOIN" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="o" name="tJoin_1">
-      <column comment="" key="true" length="32" name="CORRELATIVO" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Long" usefulColumn="true"/>
       <column comment="" key="false" length="20" name="ID_PROYECTO" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="PERIODO" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="6" name="ID_CLASE" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="25" name="ID_FACULTAD" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="ID_DOCENTE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="NO_CUENTA" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="25" name="BENEFICIARIO" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="16" name="HORAS_ACUM" nullable="false" pattern="" precision="0" sourceType="SMALLINT" type="id_Short" usefulColumn="true"/>
-      <column comment="" key="false" length="0" name="PRO_NOPRO" nullable="true" pattern="" precision="0" sourceType="BOOLEAN" type="id_Boolean" usefulColumn="true"/>
-      <column comment="" key="false" length="2" name="ID_VINC" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="19" name="Major_Id" nullable="true" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true"/>
       <column comment="" key="true" length="19" name="Id" nullable="false" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
     </metadata>
     <metadata connector="REJECT" label="o" name="REJECT">
-      <column comment="" key="true" length="32" name="CORRELATIVO" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Long" usefulColumn="true"/>
       <column comment="" key="false" length="20" name="ID_PROYECTO" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="PERIODO" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="6" name="ID_CLASE" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="25" name="ID_FACULTAD" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="ID_DOCENTE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="NO_CUENTA" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="25" name="BENEFICIARIO" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="16" name="HORAS_ACUM" nullable="false" pattern="" precision="0" sourceType="SMALLINT" type="id_Short" usefulColumn="true"/>
-      <column comment="" key="false" length="0" name="PRO_NOPRO" nullable="true" pattern="" precision="0" sourceType="BOOLEAN" type="id_Boolean" usefulColumn="true"/>
-      <column comment="" key="false" length="2" name="ID_VINC" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="19" name="Major_Id" nullable="true" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true"/>
       <column comment="" key="true" length="19" name="Id" nullable="false" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
     </metadata>
   </node>
-  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="448" posY="288">
+  <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="480" posY="320">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlInput_2" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_nhRiEFk6EeaUF7yCZzmS0A" show="false"/>
@@ -428,7 +352,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#xA;  `projects`.`Id`, &#xA;  `projects`.`ProjectId`, &#xA;  `projects`.`Name`, &#xA;  `projects`.`Description`, &#xA;  `projects`.`Cost`, &#xA;  `projects`.`IsDeleted`, &#xA;  `projects`.`BeneficiarieOrganization`&#xA;FROM `projects`&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#xA;  `projects`.`Id`, &#xA;  `projects`.`ProjectId`, &#xA;  `projects`.`Name`, &#xA;  `projects`.`Description`, &#xA;  `projects`.`IsDeleted`, &#xA;  `projects`.`BeneficiarieOrganization`&#xA;FROM `projects`&quot;"/>
     <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
@@ -446,8 +370,6 @@
       <elementValue elementRef="SCHEMA_COLUMN" value="Name"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="Description"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="Cost"/>
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="IsDeleted"/>
       <elementValue elementRef="TRIM" value="false"/>
@@ -469,9 +391,6 @@
       <column comment="" key="false" length="2147483647" name="Description" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="22" name="Cost" nullable="false" pattern="" precision="0" sourceType="DOUBLE" type="id_Double" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
       <column comment="" key="false" length="0" name="IsDeleted" nullable="false" pattern="" precision="0" sourceType="BIT" type="id_Boolean" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -481,7 +400,7 @@
       <additionalProperties key="Comment" value=""/>
     </metadata>
   </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="608" posY="96">
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="608" posY="128">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tLogRow_2" show="false"/>
     <elementParameter field="RADIO" name="BASIC_MODE" value="true"/>
     <elementParameter field="RADIO" name="TABLE_PRINT" value="false"/>
@@ -495,27 +414,9 @@
     <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false"/>
     <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false"/>
     <elementParameter field="TABLE" name="LENGTHS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="CORRELATIVO"/>
-      <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="ID_PROYECTO"/>
       <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="PERIODO"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ID_CLASE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ID_FACULTAD"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ID_DOCENTE"/>
-      <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="NO_CUENTA"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="BENEFICIARIO"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="HORAS_ACUM"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="PRO_NOPRO"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ID_VINC"/>
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="Major_Id"/>
       <elementValue elementRef="LENGTH" value="10"/>
@@ -526,24 +427,15 @@
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="100" show="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="o" name="tLogRow_2">
-      <column comment="" key="true" length="32" name="CORRELATIVO" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Long" usefulColumn="true"/>
       <column comment="" key="false" length="20" name="ID_PROYECTO" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="PERIODO" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="6" name="ID_CLASE" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="25" name="ID_FACULTAD" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="ID_DOCENTE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="NO_CUENTA" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="25" name="BENEFICIARIO" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="16" name="HORAS_ACUM" nullable="false" pattern="" precision="0" sourceType="SMALLINT" type="id_Short" usefulColumn="true"/>
-      <column comment="" key="false" length="0" name="PRO_NOPRO" nullable="true" pattern="" precision="0" sourceType="BOOLEAN" type="id_Boolean" usefulColumn="true"/>
-      <column comment="" key="false" length="2" name="ID_VINC" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="19" name="Major_Id" nullable="true" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true"/>
       <column comment="" key="true" length="19" name="Id" nullable="false" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="704" posY="224">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="704" posY="256">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMap_2" show="false"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
@@ -571,23 +463,38 @@
         <mapperTableEntries name="Project_Id" expression="row3.Id " type="id_Long" nullable="true"/>
       </outputTables>
       <inputTables sizeState="INTERMEDIATE" name="row3" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
-        <mapperTableEntries name="CORRELATIVO" type="id_Long" nullable="true"/>
         <mapperTableEntries name="ID_PROYECTO" type="id_String"/>
-        <mapperTableEntries name="PERIODO" type="id_String"/>
-        <mapperTableEntries name="ID_CLASE" type="id_String"/>
-        <mapperTableEntries name="ID_FACULTAD" type="id_String" nullable="true"/>
-        <mapperTableEntries name="ID_DOCENTE" type="id_String" nullable="true"/>
         <mapperTableEntries name="NO_CUENTA" type="id_String"/>
-        <mapperTableEntries name="BENEFICIARIO" type="id_String"/>
-        <mapperTableEntries name="HORAS_ACUM" type="id_Short"/>
-        <mapperTableEntries name="PRO_NOPRO" type="id_Boolean" nullable="true"/>
-        <mapperTableEntries name="ID_VINC" type="id_String"/>
         <mapperTableEntries name="Major_Id" type="id_Long" nullable="true"/>
         <mapperTableEntries name="Id" type="id_Long"/>
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="896" posY="192">
+  <node componentName="tAggregateRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="800" posY="128">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tAggregateRow_1" show="false"/>
+    <elementParameter field="TABLE" name="GROUPBYS">
+      <elementValue elementRef="OUTPUT_COLUMN" value="Major_Id"/>
+      <elementValue elementRef="INPUT_COLUMN" value="Major_Id"/>
+      <elementValue elementRef="OUTPUT_COLUMN" value="Project_Id"/>
+      <elementValue elementRef="INPUT_COLUMN" value="Project_Id"/>
+    </elementParameter>
+    <elementParameter field="TABLE" name="OPERATIONS"/>
+    <elementParameter field="TEXT" name="LIST_DELIMITER" value="&quot;,&quot;"/>
+    <elementParameter field="CHECK" name="USE_FINANCIAL_PRECISION" value="true"/>
+    <elementParameter field="CHECK" name="CHECK_TYPE_OVERFLOW" value="false"/>
+    <elementParameter field="CHECK" name="CHECK_ULP" value="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="projectmajors" name="tAggregateRow_1">
+      <column comment="" key="false" length="19" name="Major_Id" nullable="true" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="19" name="Project_Id" nullable="true" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <additionalProperties key="Comment" value=""/>
+    </metadata>
+  </node>
+  <node componentName="tMysqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="928" posY="256">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlOutput_1" show="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_nhRiEFk6EeaUF7yCZzmS0A" show="false"/>
@@ -660,67 +567,6 @@
       <additionalProperties key="Comment" value=""/>
     </metadata>
   </node>
-  <node componentName="tMysqlRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1056" posY="128">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlRow_1" show="false"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_nhRiEFk6EeaUF7yCZzmS0A" show="false"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="MYSQL_5"/>
-    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
-    <elementParameter field="TEXT" name="HOST" value="&quot;localhost&quot;"/>
-    <elementParameter field="TEXT" name="PORT" value="&quot;3306&quot;"/>
-    <elementParameter field="TEXT" name="DBNAME" value="&quot;vinculacion&quot;"/>
-    <elementParameter field="TEXT" name="TYPE" value="MYSQL" show="false"/>
-    <elementParameter field="TEXT" name="USER" value="&quot;root&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="A8Alqbka73xSt5pw+TqrJg=="/>
-    <elementParameter field="TECHNICAL" name="SCHEMA_FLOW:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA_FLOW:REPOSITORY_SCHEMA_TYPE" value="_nhRiEFk6EeaUF7yCZzmS0A - projectmajors" show="false"/>
-    <elementParameter field="DBTABLE" name="TABLE" value="&quot;projectmajors&quot;"/>
-    <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
-    <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
-    <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;delete `vinculacion`.`projectmajors` from `vinculacion`.`projectmajors` inner join &#xD;&#xA;    (select  min(Id) minid, Major_Id, Project_Id&#xD;&#xA;     from `vinculacion`.`projectmajors`&#xD;&#xA;     group by Major_Id, Project_Id&#xD;&#xA;     having count(1) > 1) as duplicates&#xD;&#xA;   on (duplicates.Major_Id = `vinculacion`.`projectmajors`.Major_Id&#xD;&#xA;   and duplicates.Project_Id = `vinculacion`.`projectmajors`.Project_Id&#xD;&#xA;   and duplicates.minid &lt;> `vinculacion`.`projectmajors`.Id)&quot;"/>
-    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
-    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
-    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" value="&quot;&quot;" show="false"/>
-    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
-    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;noDatetimeStringSync=true&quot;"/>
-    <elementParameter field="CHECK" name="PROPAGATE_RECORD_SET" value="false"/>
-    <elementParameter field="COLUMN_LIST" name="RECORD_SET_COLUMN" value="Id" show="false"/>
-    <elementParameter field="CHECK" name="USE_PREPAREDSTATEMENT" value="false"/>
-    <elementParameter field="TABLE" name="SET_PREPAREDSTATEMENT_PARAMETERS" show="false"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;" show="false"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
-    <elementParameter field="TEXT" name="COMMIT_EVERY" value="10000"/>
-    <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="projectmajors" name="tMysqlRow_1">
-      <column comment="" key="true" length="19" name="Id" nullable="false" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="19" name="Major_Id" nullable="true" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="19" name="Project_Id" nullable="true" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <additionalProperties key="Comment" value=""/>
-    </metadata>
-    <metadata connector="REJECT" label="projectmajors" name="REJECT">
-      <column comment="" key="true" length="19" name="Id" nullable="false" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="19" name="Major_Id" nullable="true" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="19" name="Project_Id" nullable="true" pattern="" precision="0" sourceType="BIGINT" type="id_Long" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <additionalProperties key="Comment" value=""/>
-    </metadata>
-  </node>
   <connection connectorName="FLOW" label="row7" lineStyle="0" metaname="tAccessInput_2" offsetLabelX="0" offsetLabelY="0" source="tAccessInput_2" target="tJoin_3">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row7" show="false"/>
@@ -749,20 +595,16 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="row2" show="false"/>
   </connection>
-  <connection connectorName="FLOW" label="out" lineStyle="0" metaname="out" offsetLabelX="0" offsetLabelY="0" source="tMap_2" target="tMysqlOutput_1">
+  <connection connectorName="FLOW" label="out" lineStyle="0" metaname="out" offsetLabelX="0" offsetLabelY="0" source="tMap_2" target="tAggregateRow_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="out" show="false"/>
   </connection>
-  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tMysqlOutput_1" offsetLabelX="0" offsetLabelY="0" source="tMysqlOutput_1" target="tMysqlRow_1">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="OnComponentOk1" show="false"/>
+  <connection connectorName="FLOW" label="row5" lineStyle="0" metaname="tAggregateRow_1" offsetLabelX="0" offsetLabelY="0" source="tAggregateRow_1" target="tMysqlOutput_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row5" show="false"/>
   </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tAccessInput_2" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
-  </subjob>
-  <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMysqlRow_1" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>

@@ -155,7 +155,7 @@
       <column comment="" key="false" length="-1" name="HORAS_ACUM" nullable="true" originalDbColumnName="[TABLA GENERAL].HORAS_ACUM" pattern="" precision="-1" sourceType="INTEGER" type="id_Integer" originalLength="-1" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="out">
         <mapperTableEntries name="NOMB_FACULTA" expression="row1.NOMB_FACULTA.toUpperCase()" type="id_String" nullable="true"/>
@@ -182,10 +182,12 @@
     <metadata connector="FLOW" label="out" name="tJoin_1">
       <column comment="" key="false" length="-1" name="NOMB_FACULTA" nullable="true" originalDbColumnName="[DATOS FACULTAD].NOMB_FACULTA" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="HORAS_ACUM" nullable="true" originalDbColumnName="[TABLA GENERAL].HORAS_ACUM" pattern="" precision="-1" sourceType="INTEGER" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="HOURS" nullable="true" originalDbColumnName="hours.Amount" pattern="" precision="-1" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" label="out" name="REJECT">
       <column comment="" key="false" length="-1" name="NOMB_FACULTA" nullable="true" originalDbColumnName="[DATOS FACULTAD].NOMB_FACULTA" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="HORAS_ACUM" nullable="true" originalDbColumnName="[TABLA GENERAL].HORAS_ACUM" pattern="" precision="-1" sourceType="INTEGER" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="HOURS" nullable="true" originalDbColumnName="hours.Amount" pattern="" precision="-1" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tMysqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="224" posY="224">
@@ -247,6 +249,8 @@
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="HORAS_ACUM"/>
       <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="HOURS"/>
+      <elementValue elementRef="LENGTH" value="10"/>
     </elementParameter>
     <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="100" show="false"/>
@@ -254,6 +258,7 @@
     <metadata connector="FLOW" label="out" name="tLogRow_1">
       <column comment="" key="false" length="-1" name="NOMB_FACULTA" nullable="true" originalDbColumnName="[DATOS FACULTAD].NOMB_FACULTA" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="HORAS_ACUM" nullable="true" originalDbColumnName="[TABLA GENERAL].HORAS_ACUM" pattern="" precision="-1" sourceType="INTEGER" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="HOURS" nullable="true" originalDbColumnName="hours.Amount" pattern="" precision="-1" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="480" posY="224">
@@ -274,6 +279,8 @@
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="HORAS_ACUM"/>
       <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="HOURS"/>
+      <elementValue elementRef="LENGTH" value="10"/>
     </elementParameter>
     <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="100" show="false"/>
@@ -281,6 +288,7 @@
     <metadata connector="FLOW" label="out" name="tLogRow_2">
       <column comment="" key="false" length="-1" name="NOMB_FACULTA" nullable="true" originalDbColumnName="[DATOS FACULTAD].NOMB_FACULTA" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="HORAS_ACUM" nullable="true" originalDbColumnName="[TABLA GENERAL].HORAS_ACUM" pattern="" precision="-1" sourceType="INTEGER" type="id_Integer" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="HOURS" nullable="true" originalDbColumnName="hours.Amount" pattern="" precision="-1" sourceType="INT" type="id_Integer" originalLength="-1" usefulColumn="true"/>
     </metadata>
   </node>
   <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tAccessInput_1" offsetLabelX="0" offsetLabelY="0" source="tAccessInput_1" target="tMap_1">
