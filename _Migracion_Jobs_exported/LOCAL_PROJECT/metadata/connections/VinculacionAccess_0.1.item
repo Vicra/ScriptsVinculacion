@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.relational="http:///orgomg/cwm/resource/relational.ecore" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010">
+  <TalendMetadata:DatabaseConnection xmi:id="_brwsoFk6EeaUF7yCZzmS0A" name="VinculacionAccess" id="_YAyPsFk6EeaUF7yCZzmS0A" label="VinculacionAccess" dataPackage="_mo9aAFk6EeaUF7yCZzmS0A" DatabaseType="Access" DriverClass="net.ucanaccess.jdbc.UcanaccessDriver" URL="jdbc:ucanaccess://C:/Users/Victor/Desktop/Vinculacion.accdb;memory=false" dbVersionString="AS400_V6R1_V7R2" Port="" Username="" Password="" ServerName="" DatasourceName="" FileFieldName="C:/Users/Victor/Desktop/Vinculacion.accdb" SID="" SqlSynthax="Sintaxis SQL" DbmsId="access_id" ProductId="ACCESS" AdditionalParams="memory=false" StandardSQL="true" SQLMode="false" UiSchema="">
+    <taggedValue xmi:id="_brwsoVk6EeaUF7yCZzmS0A" tag="Is Conn Need Reload" value="false"/>
+    <taggedValue xmi:id="_bsXJkFk6EeaUF7yCZzmS0A" tag="package filter" value=""/>
+    <taggedValue xmi:id="_bsXJkVk6EeaUF7yCZzmS0A" tag="Status" value=""/>
+    <taggedValue xmi:id="_bsXJklk6EeaUF7yCZzmS0A" tag="Version" value="0.1"/>
+    <taggedValue xmi:id="_bsXJk1k6EeaUF7yCZzmS0A" tag="Purpose" value=""/>
+    <taggedValue xmi:id="_bsXJlFk6EeaUF7yCZzmS0A" tag="Description" value=""/>
+    <taggedValue xmi:id="_bsXJlVk6EeaUF7yCZzmS0A" tag="Author" value=""/>
+    <taggedValue xmi:id="_bsXJllk6EeaUF7yCZzmS0A" tag="otherParameter"/>
+    <taggedValue xmi:id="_cJRIAFk6EeaUF7yCZzmS0A" tag="DB ProductName" value="Ucanaccess for access db(Jet) using hasqldb"/>
+    <taggedValue xmi:id="_cJRIAVk6EeaUF7yCZzmS0A" tag="DB ProductVersion" value="V2007 [VERSION_12]"/>
+    <taggedValue xmi:id="_cJRIAlk6EeaUF7yCZzmS0A" tag="DB IdentifierQuoteString" value="`"/>
+    <parameters xmi:id="_brwsolk6EeaUF7yCZzmS0A" key="CONN_PARA_KEY_USERNAME" value=""/>
+  </TalendMetadata:DatabaseConnection>
+  <orgomg.cwm.resource.relational:Schema xmi:id="_mo9aAFk6EeaUF7yCZzmS0A" name="VinculacionAccess" dataManager="_brwsoFk6EeaUF7yCZzmS0A">
+    <ownedElement xsi:type="relational:TdTable" xmi:id="_mo9aAVk6EeaUF7yCZzmS0A" name="DATOS ALUMNO" id="_i8MNUFk6EeaUF7yCZzmS0A" label="DATOS_ALUMNO" tableType="TABLE">
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo9aAlk6EeaUF7yCZzmS0A" name="NO_CUENTA" label="NO_CUENTA" length="10" sourceType="VARCHAR" talendType="id_String" key="true" nullable="false">
+        <initialValue xmi:id="_mo9aA1k6EeaUF7yCZzmS0A"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo9aBFk6EeaUF7yCZzmS0A" name="P_NOMBRE" label="P_NOMBRE" length="50" sourceType="VARCHAR" talendType="id_String" nullable="false">
+        <initialValue xmi:id="_mo9aBVk6EeaUF7yCZzmS0A"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo9aBlk6EeaUF7yCZzmS0A" name="S_NOMBRE" label="S_NOMBRE" length="50" sourceType="VARCHAR" talendType="id_String">
+        <initialValue xmi:id="_mo9aB1k6EeaUF7yCZzmS0A"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo9aCFk6EeaUF7yCZzmS0A" name="P_ APELLIDO" label="P__APELLIDO" length="50" sourceType="VARCHAR" talendType="id_String" nullable="false">
+        <initialValue xmi:id="_mo9aCVk6EeaUF7yCZzmS0A"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo9aClk6EeaUF7yCZzmS0A" name="S_APELLIDO" label="S_APELLIDO" length="50" sourceType="VARCHAR" talendType="id_String">
+        <initialValue xmi:id="_mo9aC1k6EeaUF7yCZzmS0A"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo9aDFk6EeaUF7yCZzmS0A" name="ID_CARRERA" label="ID_CARRERA" length="10" sourceType="VARCHAR" talendType="id_String" nullable="false">
+        <initialValue xmi:id="_mo9aDVk6EeaUF7yCZzmS0A"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo9aDlk6EeaUF7yCZzmS0A" name="ID_CAMPUS" label="ID_CAMPUS" length="10" sourceType="VARCHAR" talendType="id_String" nullable="false">
+        <initialValue xmi:id="_mo9aD1k6EeaUF7yCZzmS0A"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo9aEFk6EeaUF7yCZzmS0A" name="FINIQUITO_F" label="FINIQUITO_F" sourceType="BOOLEAN" talendType="id_Boolean">
+        <initialValue xmi:id="_mo9aEVk6EeaUF7yCZzmS0A"/>
+      </feature>
+    </ownedElement>
+    <ownedElement xsi:type="relational:TdTable" xmi:id="_mo9aElk6EeaUF7yCZzmS0A" name="DATOS FACULTAD" id="_i8yqRFk6EeaUF7yCZzmS0A" label="DATOS_FACULTAD" tableType="TABLE">
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo9aE1k6EeaUF7yCZzmS0A" name="ID_FACULTAD" label="ID_FACULTAD" length="25" sourceType="VARCHAR" talendType="id_String" key="true" nullable="false">
+        <initialValue xmi:id="_mo9aFFk6EeaUF7yCZzmS0A"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo9aFVk6EeaUF7yCZzmS0A" name="NOMB_FACULTAD" label="NOMB_FACULTAD" length="50" sourceType="VARCHAR" talendType="id_String">
+        <initialValue xmi:id="_mo9aFlk6EeaUF7yCZzmS0A"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo9aF1k6EeaUF7yCZzmS0A" name="ID_CAMPUS" label="ID_CAMPUS" length="10" sourceType="VARCHAR" talendType="id_String">
+        <initialValue xmi:id="_mo9aGFk6EeaUF7yCZzmS0A"/>
+      </feature>
+    </ownedElement>
+    <ownedElement xsi:type="relational:TdTable" xmi:id="_mo9aGVk6EeaUF7yCZzmS0A" name="DATOS DOCENTES" id="_i870MFk6EeaUF7yCZzmS0A" label="DATOS_DOCENTES" tableType="TABLE">
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo9aGlk6EeaUF7yCZzmS0A" name="ID_DOCENTE" label="ID_DOCENTE" length="5" sourceType="VARCHAR" talendType="id_String" key="true" nullable="false">
+        <initialValue xmi:id="_mo9aG1k6EeaUF7yCZzmS0A"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo-BEFk6EeaUF7yCZzmS0A" name="NOMB_DOCENTE" label="NOMB_DOCENTE" length="25" sourceType="VARCHAR" talendType="id_String" nullable="false">
+        <initialValue xmi:id="_mo-BEVk6EeaUF7yCZzmS0A"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo-BElk6EeaUF7yCZzmS0A" name="APE_DOCENTE" label="APE_DOCENTE" length="25" sourceType="VARCHAR" talendType="id_String" nullable="false">
+        <initialValue xmi:id="_mo-BE1k6EeaUF7yCZzmS0A"/>
+      </feature>
+    </ownedElement>
+    <ownedElement xsi:type="relational:TdTable" xmi:id="_mo-BFFk6EeaUF7yCZzmS0A" name="DATOS CARRERA" id="_i870MVk6EeaUF7yCZzmS0A" label="DATOS_CARRERA" tableType="TABLE">
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo-BFVk6EeaUF7yCZzmS0A" name="ID_CARRERA" label="ID_CARRERA" length="10" sourceType="VARCHAR" talendType="id_String" key="true">
+        <initialValue xmi:id="_mo-BFlk6EeaUF7yCZzmS0A"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo-BF1k6EeaUF7yCZzmS0A" name="NOMB_CARRERA" label="NOMB_CARRERA" length="100" sourceType="VARCHAR" talendType="id_String" key="true" nullable="false">
+        <initialValue xmi:id="_mo-BGFk6EeaUF7yCZzmS0A"/>
+      </feature>
+    </ownedElement>
+    <ownedElement xsi:type="relational:TdTable" xmi:id="_mo-BGVk6EeaUF7yCZzmS0A" name="DATOS CAMPUS" id="_i870Mlk6EeaUF7yCZzmS0A" label="DATOS_CAMPUS" tableType="TABLE">
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo-BGlk6EeaUF7yCZzmS0A" name="ID_CAMPUS" label="ID_CAMPUS" length="10" sourceType="VARCHAR" talendType="id_String" key="true" nullable="false">
+        <initialValue xmi:id="_mo-BG1k6EeaUF7yCZzmS0A"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo-BHFk6EeaUF7yCZzmS0A" name="NOMB_CAMPUS" label="NOMB_CAMPUS" length="25" sourceType="VARCHAR" talendType="id_String">
+        <initialValue xmi:id="_mo-BHVk6EeaUF7yCZzmS0A"/>
+      </feature>
+    </ownedElement>
+    <ownedElement xsi:type="relational:TdTable" xmi:id="_mo-BHlk6EeaUF7yCZzmS0A" name="DATOS PROYECTOS" id="_i9FlMFk6EeaUF7yCZzmS0A" label="DATOS_PROYECTOS" tableType="TABLE">
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo-BH1k6EeaUF7yCZzmS0A" name="ID_PROYECTO" label="ID_PROYECTO" length="20" sourceType="VARCHAR" talendType="id_String" key="true" nullable="false">
+        <initialValue xmi:id="_mo-BIFk6EeaUF7yCZzmS0A"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo-BIVk6EeaUF7yCZzmS0A" name="NOMB_PROYECTO" label="NOMB_PROYECTO" length="255" sourceType="VARCHAR" talendType="id_String" nullable="false">
+        <initialValue xmi:id="_mo-BIlk6EeaUF7yCZzmS0A"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo-BI1k6EeaUF7yCZzmS0A" name="COSTO" label="COSTO" length="100" precision="4" sourceType="DECIMAL" talendType="id_Double" nullable="false">
+        <initialValue xmi:id="_mo-BJFk6EeaUF7yCZzmS0A"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo-BJVk6EeaUF7yCZzmS0A" name="ID_CLASE" label="ID_CLASE" length="6" sourceType="VARCHAR" talendType="id_String" nullable="false">
+        <initialValue xmi:id="_mo-BJlk6EeaUF7yCZzmS0A"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo-BJ1k6EeaUF7yCZzmS0A" name="ID_DOCENTE" label="ID_DOCENTE" length="5" sourceType="VARCHAR" talendType="id_String" nullable="false">
+        <initialValue xmi:id="_mo-BKFk6EeaUF7yCZzmS0A"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo-BKVk6EeaUF7yCZzmS0A" name="ORGANIZACIÓN_BENEFICIADA" label="ORGANIZACION_BENEFICIADA" length="255" sourceType="VARCHAR" talendType="id_String">
+        <initialValue xmi:id="_mo-BKlk6EeaUF7yCZzmS0A"/>
+      </feature>
+    </ownedElement>
+    <ownedElement xsi:type="relational:TdTable" xmi:id="_mo-BK1k6EeaUF7yCZzmS0A" name="DATOS TIPO VINCULACIÓN" id="_i9FlMVk6EeaUF7yCZzmS0A" label="DATOS_TIPO_VINCULACION" tableType="TABLE">
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo-BLFk6EeaUF7yCZzmS0A" name="ID_VINC" label="ID_VINC" length="2" sourceType="VARCHAR" talendType="id_String" key="true">
+        <initialValue xmi:id="_mo-BLVk6EeaUF7yCZzmS0A"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo-BLlk6EeaUF7yCZzmS0A" name="TIPO_VINC" label="TIPO_VINC" length="50" sourceType="VARCHAR" talendType="id_String" key="true" nullable="false">
+        <initialValue xmi:id="_mo-BL1k6EeaUF7yCZzmS0A"/>
+      </feature>
+    </ownedElement>
+    <ownedElement xsi:type="relational:TdTable" xmi:id="_mo-BMFk6EeaUF7yCZzmS0A" name="TABLA GENERAL" id="_i9PWMFk6EeaUF7yCZzmS0A" label="TABLA_GENERAL" tableType="TABLE">
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo-BMVk6EeaUF7yCZzmS0A" name="CORRELATIVO" label="CORRELATIVO" length="32" sourceType="INTEGER" talendType="id_Long" key="true">
+        <initialValue xmi:id="_mo-BMlk6EeaUF7yCZzmS0A"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo-BM1k6EeaUF7yCZzmS0A" name="ID_PROYECTO" label="ID_PROYECTO" length="20" sourceType="VARCHAR" talendType="id_String" nullable="false">
+        <initialValue xmi:id="_mo-BNFk6EeaUF7yCZzmS0A"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo-BNVk6EeaUF7yCZzmS0A" name="PERIODO" label="PERIODO" length="10" sourceType="VARCHAR" talendType="id_String" nullable="false">
+        <initialValue xmi:id="_mo-BNlk6EeaUF7yCZzmS0A"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo-BN1k6EeaUF7yCZzmS0A" name="ID_CLASE" label="ID_CLASE" length="6" sourceType="VARCHAR" talendType="id_String" nullable="false">
+        <initialValue xmi:id="_mo-BOFk6EeaUF7yCZzmS0A"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo-BOVk6EeaUF7yCZzmS0A" name="ID_FACULTAD" label="ID_FACULTAD" length="25" sourceType="VARCHAR" talendType="id_String">
+        <initialValue xmi:id="_mo-BOlk6EeaUF7yCZzmS0A"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo-BO1k6EeaUF7yCZzmS0A" name="ID_DOCENTE" label="ID_DOCENTE" length="5" sourceType="VARCHAR" talendType="id_String">
+        <initialValue xmi:id="_mo-BPFk6EeaUF7yCZzmS0A"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo-BPVk6EeaUF7yCZzmS0A" name="NO_CUENTA" label="NO_CUENTA" length="10" sourceType="VARCHAR" talendType="id_String" nullable="false">
+        <initialValue xmi:id="_mo-BPlk6EeaUF7yCZzmS0A"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo-BP1k6EeaUF7yCZzmS0A" name="BENEFICIARIO" label="BENEFICIARIO" length="25" sourceType="VARCHAR" talendType="id_String" nullable="false">
+        <initialValue xmi:id="_mo-BQFk6EeaUF7yCZzmS0A"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo-BQVk6EeaUF7yCZzmS0A" name="HORAS_ACUM" label="HORAS_ACUM" length="16" sourceType="SMALLINT" talendType="id_Short" nullable="false">
+        <initialValue xmi:id="_mo-BQlk6EeaUF7yCZzmS0A"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo-BQ1k6EeaUF7yCZzmS0A" name="PRO_NOPRO" label="PRO_NOPRO" sourceType="BOOLEAN" talendType="id_Boolean">
+        <initialValue xmi:id="_mo-BRFk6EeaUF7yCZzmS0A"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo-BRVk6EeaUF7yCZzmS0A" name="ID_VINC" label="ID_VINC" length="2" sourceType="VARCHAR" talendType="id_String" nullable="false">
+        <initialValue xmi:id="_mo-BRlk6EeaUF7yCZzmS0A"/>
+      </feature>
+    </ownedElement>
+    <ownedElement xsi:type="relational:TdTable" xmi:id="_mo-BR1k6EeaUF7yCZzmS0A" name="DATOS ASIGNATURAS" id="_i9sCIFk6EeaUF7yCZzmS0A" label="DATOS_ASIGNATURAS" tableType="TABLE">
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo-BSFk6EeaUF7yCZzmS0A" name="ID_CLASE" label="ID_CLASE" length="6" sourceType="VARCHAR" talendType="id_String">
+        <initialValue xmi:id="_mo-BSVk6EeaUF7yCZzmS0A"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo-BSlk6EeaUF7yCZzmS0A" name="NOMB_CLASE" label="NOMB_CLASE" length="100" sourceType="VARCHAR" talendType="id_String">
+        <initialValue xmi:id="_mo-BS1k6EeaUF7yCZzmS0A"/>
+      </feature>
+      <feature xsi:type="relational:TdColumn" xmi:id="_mo-BTFk6EeaUF7yCZzmS0A" name="ID_FACULTAD" label="ID_FACULTAD" length="25" sourceType="VARCHAR" talendType="id_String">
+        <initialValue xmi:id="_mo-BTVk6EeaUF7yCZzmS0A"/>
+      </feature>
+    </ownedElement>
+  </orgomg.cwm.resource.relational:Schema>
+</xmi:XMI>
